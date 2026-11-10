@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Catalog from './pages/catalog';
 import CarDetail from './pages/CarDetail';
+import CarCreate from './pages/CarCreate';
+import CarEdit from './pages/CarEdit';
 import Login from './pages/Login';
 
 function App() {
@@ -30,10 +32,12 @@ function App() {
     <BrowserRouter>
       <div style={{ backgroundColor: '#1e2225', minHeight: '100vh', color: '#e9ecef', fontFamily: "'Segoe UI', Roboto, sans-serif" }}>
         <Navbar user={user} onLogout={handleLogout} />
-        
+
         <Routes>
           <Route path="/" element={<Catalog />} />
+          <Route path="/cars/create" element={<CarCreate />} />
           <Route path="/cars/:id" element={<CarDetail />} />
+          <Route path="/cars/:id/edit" element={<CarEdit />} />
           <Route path="/login" element={<Login onLoginSuccess={handleLoginSuccess} />} />
         </Routes>
       </div>
