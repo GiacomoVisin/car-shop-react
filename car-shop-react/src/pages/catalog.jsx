@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom'; // 1. Importazione corretta con le parentesi graffe
 
 export default function catalog() {
     const [cars, setCars] = useState([]);
@@ -193,16 +194,18 @@ export default function catalog() {
                                         </div>
                                     </div>
 
-                                    <button
-                                        onClick={() => alert(`Dettaglio auto ID: ${car.id}`)}
+                                    {/* 2. Sostituito il button con il tag Link per navigare alla rotta di dettaglio */}
+                                    <Link
+                                        to={`/cars/${car.id}`}
                                         style={{
                                             marginTop: '18px', width: '100%', padding: '10px',
-                                            backgroundColor: '#5a6268', color: '#fff', border: 'none',
-                                            borderRadius: '6px', fontWeight: '600', cursor: 'pointer'
+                                            backgroundColor: '#5a6268', color: '#fff', textDecoration: 'none',
+                                            borderRadius: '6px', fontWeight: '600', textAlign: 'center',
+                                            boxSizing: 'border-box', display: 'block'
                                         }}
                                     >
                                         Vedi Dettaglio
-                                    </button>
+                                    </Link>
                                 </div>
                             </div>
                         );
