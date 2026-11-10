@@ -32,18 +32,31 @@ export default function CarDetail() {
       });
   }, [id]);
 
-  const handleDelete = async () => {
+ const handleDelete = async () => {
     if (!window.confirm("Sei sicuro di voler eliminare questa auto?")) return;
 
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/cars/${id}`, {
+      const response = await axios.delete(`http://127.0.0.1:8000/api/cars/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       alert("Auto eliminata con successo!");
       navigate('/');
     } catch (err) {
-      console.error("Errore durante l'eliminazione:", err);
-      alert("Errore durante l'eliminazione del veicolo.");
+      console.error("Dettaglio completo dell'errore:", err.response ? err.response.data : err);
+      
+      // Se Laravel restituisce degli errori specifici, li stampiamo in un alert
+      if (err.response && err.response.data) {
+        const errorData = err.response.data;
+        let errorMessage = errorData.message || "Errore sconosciuto";
+        
+        if (errorData.errors) {
+          errorMessage += "\n" + JSON.stringify(errorData.errors, null, 2);
+        }
+        
+        alert("Errore dal server:\n" + errorMessage);
+      } else {
+        alert("Errore di connessione al server.");
+      }
     }
   };
 
