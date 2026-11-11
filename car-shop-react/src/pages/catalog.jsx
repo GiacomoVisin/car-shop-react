@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom'; // 1. Importazione corretta con le parentesi graffe
+import { Link } from 'react-router-dom'; 
 
 export default function catalog() {
     const [cars, setCars] = useState([]);
@@ -84,7 +84,7 @@ export default function catalog() {
             {/* Header */}
             <header style={{ textAlign: 'center', marginBottom: '35px', borderBottom: '1px solid #343a40', paddingBottom: '20px' }}>
                 <h1 style={{ fontSize: '2.4rem', margin: '0 0 10px 0', color: '#f8f9fa' }}>
-                    🏎️ Catalogo Auto Usate
+                    🏎️ Catalogo Auto
                 </h1>
                 <p style={{ color: '#6c757d', margin: 0 }}>Gestione Parco Auto — React Frontend + Laravel REST API</p>
             </header>
@@ -194,7 +194,7 @@ export default function catalog() {
                                         </div>
                                     </div>
 
-                                    {/* 2. Sostituito il button con il tag Link per navigare alla rotta di dettaglio */}
+                                      {/* Button Link to show single car*/}
                                     <Link
                                         to={`/cars/${car.id}`}
                                         style={{
