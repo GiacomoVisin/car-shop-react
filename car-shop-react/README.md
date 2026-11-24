@@ -1,24 +1,13 @@
-# 🚗 Car Shop React
+ React + Vite
 
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 Un'applicazione web moderna sviluppata in **React** per la gestione e la visualizzazione di un catalogo di automobili. Questo progetto permette agli utenti di esplorare i veicoli disponibili, filtrare le ricerche e consultare i dettagli chiave di ogni modello.
 
----
+Currently, two official plugins are available:
 
-## ✨ Caratteristiche Principali
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-- **Catalogo Dinamico:** Visualizzazione di una lista di auto con informazioni essenziali (prezzo, anno, chilometraggio, ecc.).
-- **Navigazione Fluida:** Gestione delle rotte lato client tramite **React Router v7**.
-- **Gestione Chiamate API:** Integrazione con **Axios** per il recupero dei dati relativi ai veicoli.
-- **Design Responsive:** Interfaccia utente ottimizzata sia per dispositivi mobili che per desktop.
 
----
-
-## 🛠 Tecnologie Utilizzate
-
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 Il progetto è costruito sfruttando un set di strumenti moderno e performante:
-
-- **React (^19.3.1)** - Libreria principale per l'interfaccia utente.
-- **Vite (^8.3.6)** - Tool di build e server di sviluppo ultra-rapido.
-- **React Router DOM (^7.18.5)** - Per il routing e la navigazione tra le pagine.
-- **Axios (^1.21.1)** - Per le richieste HTTP verso il backend o le API.
-- **ESLint** - Per il controllo della qualità del codice.
